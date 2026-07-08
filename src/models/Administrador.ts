@@ -1,25 +1,18 @@
-import { Medida } from "./Medida"
-
-export class Cliente {
+export class Administrador {
     nome: string
     email: string
     telefone: string
     senha: string
-    medida: Medida
 
     constructor(
         nome: string,
         email: string,
         telefone: string,
-        senha: string,
-        medida: Medida
+        senha: string
     ) {
         this.nome = nome
         this.email = email
         this.telefone = telefone
         this.senha = senha
-        this.medida = medida
     }
-
-    
 }
