@@ -1,10 +1,7 @@
 import { Medida } from "./Medida"
+import { Usuario } from "./Usuario"
 
-export class Cliente {
-    nome: string
-    email: string
-    telefone: string
-    senha: string
+export class Cliente extends Usuario                                                                                                                                 {
     medida: Medida
 
     constructor(
@@ -14,11 +11,9 @@ export class Cliente {
         senha: string,
         medida: Medida
     ) {
-        this.nome = nome
-        this.email = email
-        this.telefone = telefone
-        this.senha = senha
+        super(nome, email, telefone, senha)
         this.medida = medida
+        
     }
 
     

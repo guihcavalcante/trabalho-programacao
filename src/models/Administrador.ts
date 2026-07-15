@@ -1,18 +1,12 @@
-export class Administrador {
-    nome: string
-    email: string
-    telefone: string
-    senha: string
+import { Usuario } from "./Usuario"
 
+export class Administrador extends Usuario {
     constructor(
         nome: string,
         email: string,
         telefone: string,
         senha: string
     ) {
-        this.nome = nome
-        this.email = email
-        this.telefone = telefone
-        this.senha = senha
+        super(nome, email, telefone, senha)
     }
 }
