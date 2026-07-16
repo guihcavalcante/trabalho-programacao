@@ -25,6 +25,54 @@ export class Encomenda {
         this._observacao = observacao
     }
 
+    public get cliente(): Cliente {
+        return this._cliente
+    }
+
+    public get tecido(): Tecido {
+        return this._tecido
+    }
+
+    public get tipoDePeca(): string {
+        return this._tipoDePeca
+    }
+
+    public get prazo(): string {
+        return this._prazo
+    }
+
+    public get status(): string {
+        return this._status
+    }
+
+    public get observacao(): string {
+        return this._observacao
+    }
+
+    public set cliente(novoCliente: Cliente) {
+        this._cliente = novoCliente
+    }
+
+    public set tecido(novoTecido: Tecido) {
+        this._tecido = novoTecido
+    }
+
+    public set tipoDePeca(novoTipoDePeca: string) {
+        this._tipoDePeca = novoTipoDePeca
+    }
+
+    public set prazo(novoPrazo: string) {
+        this._prazo = novoPrazo
+    }
+
+    public set status(novoStatus: string) {
+        this._status = novoStatus
+    }
+
+    public set observacao(novaObservacao: string) {
+        this._observacao = novaObservacao
+    }
+
     public exibirEncomenda():void{
         console.log("===Encomenda===")
         console.log(`Cliente: ${this._cliente}`)
@@ -35,13 +83,5 @@ export class Encomenda {
         console.log(`observação que deseja colocar no pedido: ${this._observacao}`)
 
                                                                                     
-    }
-    public atualizarStatus(novoStatus:string):void{
-        this._status = novoStatus
-        console.log(`Novo status: ${this._status}`)
-    }
-    public set prazo(novoPrazo:string){
-        this._prazo = novoPrazo
-        console.log(`Novo prazo: ${this._prazo}`)
     }
 }

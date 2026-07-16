@@ -16,6 +16,10 @@ export class Tecido {
         this._quantidade = quantidade
     }
 
+    public verificarDisponibilidade(): boolean {
+        return this._quantidade > 0;
+    }
+
      public exibirTecido(): void {
         console.log("=== TECIDO ===");
         console.log(`Nome: ${this._nome}`);

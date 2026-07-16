@@ -16,10 +16,6 @@ export class Cliente extends Usuario                                            
         
     }
 
-    public get nome(): string {
-        return this.nome
-    }
-
     public exibirCliente(): void {
         console.log("=== CLIENTE ===");
         console.log(`Nome: ${this.nome}`);

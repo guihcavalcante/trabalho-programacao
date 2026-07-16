@@ -25,14 +25,31 @@ export abstract class Usuario{
         return this._email
     }
 
-    public set senha(novaSenha: string) {
-        this._senha = novaSenha;
-        console.log("Senha alterada com sucesso!");
+    public get telefone(): string {
+        return this._telefone
+    }
+
+    public get senha(): string {
+        return this._senha
+    }
+
+    public set nome(novoNome: string) {
+        this._nome = novoNome;
+        console.log("Nome alterado com sucesso!");
+    }
+
+    public set email(novoEmail: string) {
+        this._email = novoEmail;
+        console.log("Email alterado com sucesso!");
     }
 
     public set telefone(novoTelefone: string) {
         this._telefone = novoTelefone;
         console.log("Telefone atualizado com sucesso!");
     }
-
+    
+    public set senha(novaSenha: string) {
+        this._senha = novaSenha;
+        console.log("Senha alterada com sucesso!");
+    }
 }
