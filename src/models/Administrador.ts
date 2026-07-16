@@ -9,4 +9,13 @@ export class Administrador extends Usuario {
     ) {
         super(nome, email, telefone, senha)
     }
+
+    public gerenciadorUsuario():void{
+
+        console.log(`${this.nome} está gerenciando o usuario`)
+    }
+    public removerUsuario():void{
+        console.log(`O administrador remove o usuario ${this.gerenciadorUsuario}`)
+    }
+
 }

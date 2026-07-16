@@ -18,4 +18,14 @@ export class Medida {
         this.altura = altura
         this.observacoes = observacoes
     }
+
+    public solicitarMedidas(): void{
+        console.log("===Medidas===")
+        console.log(`Busto: ${this.busto}`)
+        console.log(`Cintura: ${this.cintura}`)
+        console.log(`Quadril: ${this.quadril}`)
+        console.log(`Altura: ${this.altura}`)
+        console.log(`observações: ${this.observacoes}`)
+    }
+
 }

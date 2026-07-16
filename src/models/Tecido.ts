@@ -15,4 +15,26 @@ export class Tecido {
         this.cor = cor
         this.quantidade = quantidade
     }
+
+     public exibirTecido(): void {
+        console.log("=== TECIDO ===");
+        console.log(`Nome: ${this.nome}`);
+        console.log(`Tipo: ${this.tipo}`);
+        console.log(`Cor: ${this.cor}`);
+        console.log(`Quantidade: ${this.quantidade} metros`);
+    }
+
+    public adicionarQuantidade(valor: number): void {
+        this.quantidade += valor;
+        console.log(`${valor} metros adicionados ao estoque.`);
+    }
+
+    public retirarQuantidade(valor: number): void {
+        if (valor <= this.quantidade) {
+            this.quantidade -= valor;
+            console.log(`${valor} metros retirados do estoque.`);
+        } else {
+            console.log("Quantidade insuficiente no estoque.");
+        }
+    }
 }
