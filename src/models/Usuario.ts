@@ -1,29 +1,37 @@
 export abstract class Usuario{
-    nome: string
-    email: string
-    telefone: string
-    senha: string
+    private _nome: string
+    private _email: string
+    private _telefone: string
+    private _senha: string
 
     constructor(nome:string, email:string, telefone:string, senha:string){
-        this.nome = nome
-        this.email = email
-        this.telefone = telefone
-        this.senha = senha
+        this._nome = nome
+        this._email = email
+        this._telefone = telefone
+        this._senha = senha
     }
     public exibirDados(): void {
         console.log("=== DADOS DO USUÁRIO ===");
-        console.log(`Nome: ${this.nome}`);
-        console.log(`Email: ${this.email}`);
-        console.log(`Telefone: ${this.telefone}`);
+        console.log(`Nome: ${this._nome}`);
+        console.log(`Email: ${this._email}`);
+        console.log(`Telefone: ${this._telefone}`);
     }
 
-    public alterarSenha(novaSenha: string): void {
-        this.senha = novaSenha;
+    public get nome(): string {
+        return this._nome
+    }
+
+    public get email(): string {
+        return this._email
+    }
+
+    public set senha(novaSenha: string) {
+        this._senha = novaSenha;
         console.log("Senha alterada com sucesso!");
     }
 
-    public atualizarTelefone(novoTelefone: string): void {
-        this.telefone = novoTelefone;
+    public set telefone(novoTelefone: string) {
+        this._telefone = novoTelefone;
         console.log("Telefone atualizado com sucesso!");
     }
 

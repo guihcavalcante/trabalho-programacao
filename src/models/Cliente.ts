@@ -2,7 +2,7 @@ import { Medida } from "./Medida"
 import { Usuario } from "./Usuario"
 
 export class Cliente extends Usuario                                                                                                                                 {
-    medida: Medida
+    private _medida: Medida
 
     constructor(
         nome: string,
@@ -12,9 +12,14 @@ export class Cliente extends Usuario                                            
         medida: Medida
     ) {
         super(nome, email, telefone, senha)
-        this.medida = medida
+        this._medida = medida
         
     }
+
+    public get nome(): string {
+        return this.nome
+    }
+
     public exibirCliente(): void {
         console.log("=== CLIENTE ===");
         console.log(`Nome: ${this.nome}`);
@@ -23,12 +28,12 @@ export class Cliente extends Usuario                                            
     }
 
     public atualizarMedida(novaMedida: Medida): void {
-        this.medida = novaMedida;
+        this._medida = novaMedida;
         console.log("Medidas atualizadas com sucesso!");
     }
     
     public exibirMedidas(): void {
-        console.log(this.medida);
+        console.log(this._medida);
     }
     
 }

@@ -1,8 +1,8 @@
 export class Tecido {
-    nome: string
-    tipo: string
-    cor: string
-    quantidade: number
+    private _nome: string
+    private _tipo: string
+    private _cor: string
+    private _quantidade: number
 
     constructor(
         nome: string,
@@ -10,28 +10,28 @@ export class Tecido {
         cor: string,
         quantidade: number
     ) {
-        this.nome = nome
-        this.tipo = tipo
-        this.cor = cor
-        this.quantidade = quantidade
+        this._nome = nome
+        this._tipo = tipo
+        this._cor = cor
+        this._quantidade = quantidade
     }
 
      public exibirTecido(): void {
         console.log("=== TECIDO ===");
-        console.log(`Nome: ${this.nome}`);
-        console.log(`Tipo: ${this.tipo}`);
-        console.log(`Cor: ${this.cor}`);
-        console.log(`Quantidade: ${this.quantidade} metros`);
+        console.log(`Nome: ${this._nome}`);
+        console.log(`Tipo: ${this._tipo}`);
+        console.log(`Cor: ${this._cor}`);
+        console.log(`Quantidade: ${this._quantidade} metros`);
     }
 
     public adicionarQuantidade(valor: number): void {
-        this.quantidade += valor;
+        this._quantidade += valor;
         console.log(`${valor} metros adicionados ao estoque.`);
     }
 
     public retirarQuantidade(valor: number): void {
-        if (valor <= this.quantidade) {
-            this.quantidade -= valor;
+        if (valor <= this._quantidade) {
+            this._quantidade -= valor;
             console.log(`${valor} metros retirados do estoque.`);
         } else {
             console.log("Quantidade insuficiente no estoque.");

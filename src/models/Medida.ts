@@ -1,9 +1,9 @@
 export class Medida {
-    busto: number
-    cintura: number
-    quadril: number
-    altura: number
-    observacoes: string
+    private _busto: number
+    private _cintura: number
+    private _quadril: number
+    private _altura: number
+    private _observacoes: string
 
     constructor(
         busto: number,
@@ -12,20 +12,20 @@ export class Medida {
         altura: number,
         observacoes: string
     ) {
-        this.busto = busto
-        this.cintura = cintura
-        this.quadril = quadril
-        this.altura = altura
-        this.observacoes = observacoes
+        this._busto = busto
+        this._cintura = cintura
+        this._quadril = quadril
+        this._altura = altura
+        this._observacoes = observacoes
     }
 
     public solicitarMedidas(): void{
         console.log("===Medidas===")
-        console.log(`Busto: ${this.busto}`)
-        console.log(`Cintura: ${this.cintura}`)
-        console.log(`Quadril: ${this.quadril}`)
-        console.log(`Altura: ${this.altura}`)
-        console.log(`observações: ${this.observacoes}`)
+        console.log(`Busto: ${this._busto}`)
+        console.log(`Cintura: ${this._cintura}`)
+        console.log(`Quadril: ${this._quadril}`)
+        console.log(`Altura: ${this._altura}`)
+        console.log(`observações: ${this._observacoes}`)
     }
 
 }

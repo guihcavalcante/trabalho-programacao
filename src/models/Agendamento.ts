@@ -2,11 +2,11 @@ import { Cliente } from "./Cliente";
 import { Encomenda } from "./Encomenda";
 
 export class Agendamento {
-    cliente: Cliente
-    encomenda: Encomenda
-    data: string
-    horario: string
-    observacoes: string
+    private _cliente: Cliente
+    private _encomenda: Encomenda
+    private _data: string
+    private _horario: string
+    private _observacoes: string
 
     constructor(
         cliente: Cliente,
@@ -15,29 +15,29 @@ export class Agendamento {
         horario: string,
         observacoes: string
     ) {
-        this.cliente = cliente
-        this.encomenda = encomenda
-        this.data = data
-        this.horario = horario
-        this.observacoes = observacoes
+        this._cliente = cliente
+        this._encomenda = encomenda
+        this._data = data
+        this._horario = horario
+        this._observacoes = observacoes
     }
 
     public exibirAgendamento(): void {
         console.log("=== AGENDAMENTO ===");
-        console.log(`Cliente: ${this.cliente.nome}`);
-        console.log(`Data: ${this.data}`);
-        console.log(`Horário: ${this.horario}`);
-        console.log(`Observações: ${this.observacoes}`);
+        console.log(`Cliente: ${this._cliente.nome}`);
+        console.log(`Data: ${this._data}`);
+        console.log(`Horário: ${this._horario}`);
+        console.log(`Observações: ${this._observacoes}`);
     }
 
     public remarcar(data: string, horario: string): void {
-        this.data = data;
-        this.horario = horario;
+        this._data = data;
+        this._horario = horario;
         console.log("Agendamento remarcado com sucesso!");
     }
 
     public cancelar(): void {
-        console.log(`O agendamento do dia ${this.data} às ${this.horario} foi cancelado.`);
+        console.log(`O agendamento do dia ${this._data} às ${this._horario} foi cancelado.`);
     }
 
 }

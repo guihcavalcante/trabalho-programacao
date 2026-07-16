@@ -6,44 +6,52 @@ import { Agendamento } from "../models/Agendamento";
 // import { Medida } from "../models/Medida";
 
 export class SistemaAtelie {
-    clientes: Cliente[] = []
-    encomendas: Encomenda[] = []
-    tecidos: Tecido[] = []
-    agendamentos: Agendamento[] = []
+    private _clientes: Cliente[] = []
+    private _encomendas: Encomenda[] = []
+    private _tecidos: Tecido[] = []
+    private _agendamentos: Agendamento[] = []
+
+    mostrarResumoSistema(): void {
+        console.log(`==RESUMO DO SISTEMA==\n 
+        -Quantidade de clientes: ${this._clientes.length}\n 
+        -Quantidade de encomendas: ${this._encomendas.length}\n 
+        -Quantidade de tecidos: ${this._tecidos.length}\n 
+        -Quantidade de agendamentos: ${this._agendamentos.length}`)
+    }
+
+    public get cliente(): Cliente[] {
+        return this._clientes
+    }
 
     cadastrarCliente(cliente: Cliente): void {
-        this.clientes.push(cliente)
+        this._clientes.push(cliente)
     }
 
     listarClientes(): Cliente[] {
-        return this.clientes
+        return this._clientes
     }
 
     cadastrarTecido(tecido: Tecido): void {
-        this.tecidos.push(tecido)
+        this._tecidos.push(tecido)
     }
 
     listarTecidos(): Tecido[] {
-        return this.tecidos
+        return this._tecidos
     }
 
     criarEncomenda(encomenda: Encomenda): void {
-        this.encomendas.push(encomenda)
+        this._encomendas.push(encomenda)
     }
 
     listarEncomendas(): Encomenda[] {
-        return this.encomendas
+        return this._encomendas
     }
 
     criarAgendamento(agendamento: Agendamento): void {
-        this.agendamentos.push(agendamento)
+        this._agendamentos.push(agendamento)
     }
     
     listarAgendamentos(): Agendamento[] {
-        return this.agendamentos
-    }
-
-    alterarStatusEncomenda(encomenda: Encomenda, novoStatus: string): void {
-        encomenda.status = novoStatus
+        return this._agendamentos
     }
 }

@@ -11,7 +11,6 @@ export class Administrador extends Usuario {
     }
 
     public gerenciadorUsuario():void{
-
         console.log(`${this.nome} está gerenciando o usuario`)
     }
     public removerUsuario():void{

@@ -2,12 +2,12 @@ import { Cliente } from "./Cliente";
 import { Tecido } from "./Tecido";
 
 export class Encomenda {
-    cliente: Cliente
-    tecido: Tecido
-    tipoDePeca: string
-    prazo: string
-    status: string
-    observacao: string
+    private _cliente: Cliente
+    private _tecido: Tecido
+    private _tipoDePeca: string
+    private _prazo: string
+    private _status: string
+    private _observacao: string
 
     constructor(
         cliente: Cliente,
@@ -17,31 +17,31 @@ export class Encomenda {
         status: string,
         observacao: string
     ) {
-        this.cliente = cliente
-        this.tecido = tecido
-        this.tipoDePeca = tipoDePeca
-        this.prazo = prazo
-        this.status = status
-        this.observacao = observacao
+        this._cliente = cliente
+        this._tecido = tecido
+        this._tipoDePeca = tipoDePeca
+        this._prazo = prazo
+        this._status = status
+        this._observacao = observacao
     }
 
     public exibirEncomenda():void{
         console.log("===Encomenda===")
-        console.log(`Cliente: ${this.cliente}`)
-        console.log(`tipo de tecido: ${this.tipoDePeca}`)
-        console.log(`Tecido: ${this.tecido}`)
-        console.log(`Prazo: ${this.prazo}`)
-        console.log(`status da encomenda: ${this.status}`)
-        console.log(`observação que deseja colocar no pedido: ${this.observacao}`)
+        console.log(`Cliente: ${this._cliente}`)
+        console.log(`tipo de tecido: ${this._tipoDePeca}`)
+        console.log(`Tecido: ${this._tecido}`)
+        console.log(`Prazo: ${this._prazo}`)
+        console.log(`status da encomenda: ${this._status}`)
+        console.log(`observação que deseja colocar no pedido: ${this._observacao}`)
 
                                                                                     
     }
     public atualizarStatus(novoStatus:string):void{
-        this.status = novoStatus
-        console.log(`Novo status: ${this.status}`)
+        this._status = novoStatus
+        console.log(`Novo status: ${this._status}`)
     }
-    public alterarPrazo(novoPrazo:string){
-        this.prazo = novoPrazo
-        console.log(`Novo prazo: ${this.prazo}`)
+    public set prazo(novoPrazo:string){
+        this._prazo = novoPrazo
+        console.log(`Novo prazo: ${this._prazo}`)
     }
 }
